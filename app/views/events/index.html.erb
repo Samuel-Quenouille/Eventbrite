@@ -1,0 +1,27 @@
+<body data-turbo="false">
+    <div class="jumbotron">
+        <div class="container">
+          <h1 class="display-3">Bienvenue !</h1>
+          <p>Voici le site n°1 pour créer et rejoindre des événéments !</p>
+          <p><a class="btn btn-primary btn-lg" href="<%= new_event_path %>" role="button">Créer ton event</a></p>
+        </div>
+      </div>
+
+    <div class="row">
+        <% @events.each do |event| %>
+    <div class="col-md-3">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card mb-3 card-home">
+            <div class="card-body mt-auto mb-auto">
+              <h5 class="card-title"><%= event.title %></h5>
+              <p class="card-text"><em><%= event.description %></em></p>
+              <a href="show/<%=event.id%>" class="btn btn-danger">Voir l'évenement</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+    </div>
+ <%= yield %>
