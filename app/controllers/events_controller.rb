@@ -13,7 +13,7 @@ class EventsController < ApplicationController
         render :new # sinon, il render la view new (qui est celle sur laquelle on est déjà)
     end
   end
-
+  
   def index
     @events = Event.all
   end

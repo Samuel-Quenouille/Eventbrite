@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  root to: redirect('/events')
+  resources :attendances
   resources :events
-  #get 'events/index'
-  get '/pages', to: 'pages#index'
-  #root 'pages#home'
+  root 'events#index'
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
